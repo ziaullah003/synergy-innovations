@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, MessageCircle } from 'lucide-react';
+import {Link} from 'react-router-dom';
 
 export default function Hero() {
   const [chatbotVisible, setChatbotVisible] = useState(false);
@@ -66,11 +67,13 @@ export default function Hero() {
       title: "Synergy Solutions",
       desc: "Top-tier software solutions crafted for your business needs.",
       btn: "Explore Software House",
+      src: "synergy-solutions",
     },
     {
       title: "Synergy Club", 
       desc: "Join a community of innovators and tech enthusiasts.",
       btn: "Visit the Club",
+      src: "synergy-club",
     },
     {
       title: "Synergy Mall",
@@ -107,7 +110,7 @@ export default function Hero() {
           {/* Main Title - Reduced Size */}
           <div className="mb-8 sm:mb-12 lg:mb-16">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 leading-tight">
-              Welcome to Software Innovations Group
+              Welcome to Synergy Innovations Group
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed px-2">
               Synergy Innovations Group is your trusted partner for software development, 
@@ -135,11 +138,11 @@ export default function Hero() {
                   </p>
                   
                   {card.src ? (
-                    <a href={card.src} target="_blank" rel="noopener noreferrer">
+                    <Link to={card.src} target="_blank" rel="noopener noreferrer">
                       <button className="w-full bg-gradient-to-r from-blue-400 to-blue-400 hover:from-blue-900 hover:to-blue-900 text-white font-semibold py-2 sm:py-2.5 lg:py-3 px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-xs sm:text-sm lg:text-base transform hover:-translate-y-1">
                         {card.btn}
                       </button>
-                    </a>
+                    </Link>
                   ) : (
                     <button className="w-full bg-gradient-to-r from-blue-400 to-blue-400 hover:from-blue-900 hover:to-blue-900 text-white font-semibold py-2 sm:py-2.5 lg:py-3 px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-xs sm:text-sm lg:text-base transform hover:-translate-y-1">
                         {card.btn}

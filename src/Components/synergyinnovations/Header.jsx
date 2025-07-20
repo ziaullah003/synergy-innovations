@@ -37,17 +37,18 @@ export default function Header() {
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo and Brand */}
         <div className="flex items-center space-x-3">
-          <a href="#" className="flex items-center group">
+          <Link to="/" className="flex items-center group">
             <img
               alt="Synergy Innovations Group Logo"
               src="/logo.png"
               className="h-10 w-auto sm:h-12 transition-transform duration-300 group-hover:scale-105"
             />
-          </a>
+          </Link>
           <div className="block">
-            <span className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 tracking-tight">
+            <Link to="/"><span className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 tracking-tight">
               Synergy Innovations Group
             </span>
+            </Link>
           </div>
         </div>
 
@@ -72,13 +73,13 @@ export default function Header() {
             Home 
           </Link> 
           <Link 
-            to="/about" 
+            to="/synergy-innovations/about" 
             className="text-base font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-400/20"
           > 
             About Us 
           </Link>
           <Link 
-            to="/contact" 
+            to="/synergy-innovations/contact" 
             className="text-base font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-400/20"
           > 
             Contact Us 
@@ -125,14 +126,14 @@ export default function Header() {
                 Home
               </Link>
               <Link
-                to="/about"
+                to="/synergy-innovations/about"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block rounded-lg px-4 py-3 text-base font-semibold text-gray-900 hover:bg-blue-400/30 transition-colors duration-200"
               >
                 About Us
               </Link>
               <Link
-                to="/contact"
+                to="/synergy-innovations/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block rounded-lg px-4 py-3 text-base font-semibold text-gray-900 hover:bg-blue-400/30 transition-colors duration-200"
               >

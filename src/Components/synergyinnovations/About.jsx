@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Lightbulb, ShoppingBag, Users, Target, Globe, Zap } from 'lucide-react';
-
+import Founder from './Founder';
 const About = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [isStatsVisible, setIsStatsVisible] = useState(false);
@@ -97,11 +97,12 @@ const About = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen bg-white">
       {/* Header Section */}
       <div className="relative overflow-hidden ">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-transparent"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-6">
               <Zap className="w-8 h-8 text-white" />
@@ -230,6 +231,8 @@ const About = () => {
         </div>
       </div>
     </div>
+    <Founder />
+    </>
   );
 };
 

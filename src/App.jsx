@@ -1,21 +1,21 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Components/synergyinnovations/Header';
 import Home from './Components/synergyinnovations/Home';
-import About from './Components/synergyinnovations/About';
-import Contact from './Components/synergyinnovations/Contact';
-import Footer from './Components/synergyinnovations/Footer'
+import AboutUsRoute from './Components/synergyinnovations/Routes/AboutUsRoute';
+import ContactUsRoute from './Components/synergyinnovations/Routes/ContactUsRoute';
+import HomeSS from './Components/synergysolutions/HomeSS';
+
 
 function App() {
   return (
     <Router>
-      <Header />
+        
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element= {<Contact />} />
+        <Route path="synergy-innovations/about" element={<AboutUsRoute  />} />
+        <Route path="synergy-innovations/contact" element={<ContactUsRoute />} />
+        <Route path="synergy-solutions" element={<HomeSS />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }
