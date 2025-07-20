@@ -67,7 +67,7 @@ export default function Hero() {
       title: "Synergy Solutions",
       desc: "Top-tier software solutions crafted for your business needs.",
       btn: "Explore Software House",
-      src: "synergy-solutions",
+      src: "/synergy-solutions",
     },
     {
       title: "Synergy Club", 

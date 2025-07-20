@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="synergy-innovations/about" element={<AboutUsRoute  />} />
         <Route path="synergy-innovations/contact" element={<ContactUsRoute />} />
-        <Route path="synergy-solutions" element={<HomeSS />} />
+        <Route path="/synergy-solutions" element={<HomeSS />} />
       </Routes>
     </Router>
   );
