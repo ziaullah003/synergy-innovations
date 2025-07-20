@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/Css/founder.css"; // Import custom styles
+import "./assets/Css/founder.css"; // Import custom styles
 
 const Founder = () => {
   return (

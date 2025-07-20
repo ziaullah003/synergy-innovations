@@ -1,5 +1,5 @@
 'use client'
-
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import {
   Dialog,
@@ -66,15 +66,10 @@ export default function Header() {
         <PopoverGroup className="hidden lg:flex lg:gap-x-12 ml-60 bg-blue-300 text-black">
    
 
-          <a href="#" className="text-md/6 font-bold text-gray-900">
-            Home
-          </a>
-          <a href="#" className="text-md/6 font-bold text-gray-900">
-            About Us
-          </a>
-          <a href="#" className="text-md/6 font-bold text-gray-900">
-            Contact Us
-          </a>
+          <Link to="/" className="text-md/6 font-bold text-gray-900"> Home </Link> 
+          <Link to="/about" className="text-md/6 font-bold text-gray-900"> About Us </Link>
+          <Link to="/contact" className="text-md/6 font-bold text-gray-900"> Contact Us </Link>
+          
         </PopoverGroup>
 
       </nav>

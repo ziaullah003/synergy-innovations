@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "../assets/Css/slider.css"; // Import custom styles
+import "./assets/Css/slider.css"; // Import custom styles
 
 export default function Hero() {
   const [chatbotVisible, setChatbotVisible] = useState(false);
