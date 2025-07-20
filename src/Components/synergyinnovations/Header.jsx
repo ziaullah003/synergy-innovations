@@ -33,7 +33,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-gradient-to-r from-blue-300 via-blue-400 to-blue-300 shadow-lg sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-blue-300 via-blue-300 to-blue-300 shadow-lg sticky top-0 z-50">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo and Brand */}
         <div className="flex items-center space-x-3">
@@ -89,7 +89,7 @@ export default function Header() {
       {/* Mobile Menu */}
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-auto min-w-80 max-w-md overflow-y-auto bg-gradient-to-br from-blue-300 via-blue-400 to-blue-300 px-6 py-4 shadow-2xl">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-auto min-w-80 max-w-md overflow-y-auto bg-gradient-to-br from-blue-300 via-blue-300 to-blue-300 px-6 py-4 shadow-2xl">
           {/* Mobile menu header */}
           <div className="flex items-center justify-between border-b border-blue-500/30 pb-4">
             <div className="flex items-center space-x-2">
