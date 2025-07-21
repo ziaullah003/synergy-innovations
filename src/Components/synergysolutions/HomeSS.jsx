@@ -1,10 +1,16 @@
 import Navbar from "./Navbar";
-import Footer from "../synergyinnovations/Footer";
+import FooterSS from "./FooterSS";
+import HeroSS from "./HeroSS";
+import Services from "./Services";
+import Projects from "./Projects";
 
 const HomeSS = () => {
     return (<>
     <Navbar />
-    <Footer />
+    <HeroSS />
+    <Services />
+    <Projects />
+    <FooterSS />
     </>)
 };
 

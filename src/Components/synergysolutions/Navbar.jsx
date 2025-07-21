@@ -10,9 +10,9 @@ const Navbar = () => {
     { name: 'Home', href: '/synergy-solutions' },
     { name: 'Services', href: '/synergy-solutions/services' },
     { name: 'Projects', href: '/synergy-solutions/projects' },
-    { name: 'About', href: '/synergy-solutions/about' },
     { name: 'Team', href: '/synergy-solutions/team' },
     { name: 'Announcements', href: '/synergy-solutions/Announcement' },
+    { name: 'About', href: '/synergy-solutions/about' },
     { name: 'Contact', href: '/synergy-solutions/contact' }
   ];
 
