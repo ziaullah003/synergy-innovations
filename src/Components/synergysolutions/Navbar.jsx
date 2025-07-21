@@ -11,7 +11,6 @@ const Navbar = () => {
     { name: 'Services', href: '/synergy-solutions/services' },
     { name: 'Projects', href: '/synergy-solutions/projects' },
     { name: 'Team', href: '/synergy-solutions/team' },
-    { name: 'Announcements', href: '/synergy-solutions/Announcement' },
     { name: 'About', href: '/synergy-solutions/about' },
     { name: 'Contact', href: '/synergy-solutions/contact' }
   ];
@@ -24,7 +23,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
             <span className="ml-3 text-2xl font-bold text-gray-800">
-              Synergy <span className="text-blue-900">Solutions</span>
+              Synergy <span className="text-blue-950">Solutions</span>
             </span>
           </div>
 
@@ -46,9 +45,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg">
-              Get Quote
+            <Link to="/">
+            <button className="bg-blue-900 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:cursor-pointer">
+              Back to Home
             </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -80,9 +81,11 @@ const Navbar = () => {
           
           {/* Mobile CTA Button */}
           <div className="px-3 py-2">
+            <Link to="/">
             <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                Get Quote
+                Back to Home
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -105,15 +105,15 @@ const Projects = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+            <span className="text-black  bg-clip-text  text-sm font-semibold tracking-wider uppercase">
               Our Portfolio
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
             Projects We've
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Delivered</span>
+            <span className="text-blue-900 bg-clip-text "> Delivered</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-semibold text-black max-w-3xl mx-auto">
             Discover our latest work and the innovative solutions we've crafted for clients across various industries
           </p>
         </div>
@@ -166,7 +166,7 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold text-bue-950 mb-2 md:mb-3 group-hover:text-black transition-colors duration-300">
+                <h3 className="text-lg md:text-xl font-bold text-blue-900 mb-2 md:mb-3 group-hover:text-black transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-black text-xs md:text-sm leading-relaxed mb-4 md:mb-6 group-hover:transition-colors duration-300">
@@ -214,21 +214,7 @@ const Projects = () => {
             </div>
         )}
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-10">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Ready to Start Your
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Next Project?</span>
-            </h2>
-            <p className="text-slate-600 mb-8 max-w-2xl mx-auto text-sm md:text-base">
-              Let's collaborate to bring your vision to life with innovative solutions and exceptional results.
-            </p>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-              Start Your Project
-            </button>
-          </div>
-        </div>
+       
       </div>
 
       <style jsx>{`

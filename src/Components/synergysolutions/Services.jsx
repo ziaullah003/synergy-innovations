@@ -69,7 +69,7 @@ const Services = () => {
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-blue-900 mb-4">
             Our Services
           </h1>
-          <p className="text-lg md:text-xl text-blue-700 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-black font-semibold max-w-3xl mx-auto">
             Comprehensive software solutions tailored to transform your business ideas into digital reality
           </p>
         </div>
@@ -100,16 +100,16 @@ const Services = () => {
 
               {/* Content */}
               <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold text-blue-900 mb-2 md:mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                <h3 className="text-lg md:text-xl font-semibold text-blue-950 mb-2 md:mb-3 group-hover:text-blue-700 transition-colors duration-300">
                   {service.name}
                 </h3>
-                <p className="text-blue-800 text-xs md:text-sm leading-relaxed mb-4">
+                <p className="text-black text-xs md:text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
               </div>
 
               {/* Animated Border */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-300 to-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm transform scale-105"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-200 to-blue-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm transform scale-105"></div>
             </div>
           ))}
         </div>
