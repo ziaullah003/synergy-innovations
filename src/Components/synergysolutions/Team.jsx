@@ -14,7 +14,7 @@ const Team = () => {
       name: "Sarah Johnson",
       role: "CEO & Founder",
       img: "https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=300&h=300&fit=crop&face=center&auto=format&q=80",
-      specialties: ["Strategic Planning", "Team Leadership"],
+      specialties: [ "Team Leadership"],
     },
     {
       id: 2,
@@ -28,21 +28,21 @@ const Team = () => {
       name: "Emily Rodriguez",
       role: "Head of Design",
       img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&face=center&auto=format&q=80",
-      specialties: ["UI/UX Design", "Brand Identity", "Product Strategy"],
+      specialties: ["UI/UX Design", "Brand Identity"],
     },
     {
       id: 4,
       name: "David Kim",
       role: "Lead Developer",
       img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&face=center&auto=format&q=80",
-      specialties: ["React/Next.js", "Node.js", "Database Design"],
+      specialties: ["React/Next.js", "Node.js"],
     },
     {
       id: 5,
       name: "Lisa Thompson",
       role: "Marketing Director",
       img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&face=center&auto=format&q=80",
-      specialties: ["Digital Marketing", "Content Strategy"],
+      specialties: ["Digital Marketing"],
     },
     {
       id: 6,
@@ -125,7 +125,7 @@ const Team = () => {
 
   return (
     <div className=" bg-gradient-to-br from-slate-50 to-slate-100 py-4 px-4 pb-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 mb-4">
@@ -150,7 +150,7 @@ const Team = () => {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="overflow-hidden rounded-3xl bg-white/50 backdrop-blur-sm border border-white/20 shadow-2xl p-4">
+          <div className="overflow-hidden rounded-3xl bg-white/50 backdrop-blur-sm border border-white/20 shadow-2xl p-5">
             {/* Slides */}
             <div 
               className="flex transition-all duration-500 ease-in-out"
@@ -248,7 +248,7 @@ const Team = () => {
                     onClick={() => goToSlide(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentSlide 
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 w-8 shadow-lg' 
+                        ? 'bg-gradient-to-r from-blue-900 to-blue-900 w-8 shadow-lg' 
                         : 'bg-slate-300 hover:bg-slate-400 hover:scale-110'
                     }`}
                     disabled={isTransitioning}
