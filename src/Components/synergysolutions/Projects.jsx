@@ -196,7 +196,7 @@ const Projects = () => {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(true)}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-base font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-blue-900 to-blue-900 text-white px-8 py-4 rounded-full text-base font-semiboldtransform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               View More Projects
             </button>
@@ -207,7 +207,7 @@ const Projects = () => {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(false)}
-              className="bg-gradient-to-r from-slate-600 to-slate-700 text-white px-8 py-4 rounded-full text-base font-semibold hover:from-slate-700 hover:to-slate-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-blue-900 to-blue-900 text-white px-8 py-4 rounded-full text-base font-semibold hover:from-slate-700 hover:to-slate-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Show Less
             </button>
