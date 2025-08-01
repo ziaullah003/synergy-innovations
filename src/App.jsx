@@ -7,7 +7,8 @@ import HomeSS from './Components/synergysolutions/HomeSS';
 import ServicesRoutes from './Components/synergysolutions/Routes/ServicesRoutes';
 import Projects from './Components/synergysolutions/Routes/ProjectsRoute';
 import TeamRoute from './Components/synergysolutions/Routes/TeamRoute';
-
+import ContactRoute from './Components/synergysolutions/Routes/ContactRoute';
+import AboutRoute from './Components/synergysolutions/Routes/AboutRoute';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/synergy-solutions/services" element={<ServicesRoutes />} />
         <Route path="/synergy-solutions/projects" element={<Projects />} />
         <Route path="/synergy-solutions/team" element={<TeamRoute />} />
+        <Route path="/synergy-solutions/contact" element={<ContactRoute />} />
+        <Route path="/synergy-solutions/about" element={<AboutRoute />} />
         
       </Routes>
     </Router>

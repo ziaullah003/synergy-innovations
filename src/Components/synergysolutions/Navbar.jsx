@@ -15,6 +15,11 @@ const Navbar = () => {
     { name: 'Contact', href: '/synergy-solutions/contact' }
   ];
 
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsOpen(false); // Close mobile menu on link click
+  };
+
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,6 +39,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
+                  onClick={handleScrollTop}
                   className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
@@ -45,10 +51,10 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link to="/">
-            <button className="bg-blue-900 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:cursor-pointer">
-              Back to Home
-            </button>
+            <Link to="/" onClick={handleScrollTop}>
+              <button className="bg-blue-900 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:cursor-pointer">
+                Back to Home
+              </button>
             </Link>
           </div>
 
@@ -70,21 +76,22 @@ const Navbar = () => {
       }`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t border-gray-200">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.href}
+              onClick={handleScrollTop}
               className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
-          
+
           {/* Mobile CTA Button */}
           <div className="px-3 py-2">
-            <Link to="/">
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+            <Link to="/" onClick={handleScrollTop}>
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
                 Back to Home
-            </button>
+              </button>
             </Link>
           </div>
         </div>
