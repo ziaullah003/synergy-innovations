@@ -57,7 +57,7 @@ const AboutSS = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white">
         <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative container mx-auto px-4 py-20 lg:py-32">
+        <div className="relative container mx-auto px-4 py-10 lg:py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
               Software Synergy
@@ -190,15 +190,15 @@ const AboutSS = () => {
               isVisible['internship'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
               <Globe className="w-16 h-16 text-blue-300 mx-auto mb-6" />
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-300">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">
                 Remote Internship Program 2024
               </h3>
-              <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-6">
+              <p className="text-lg md:text-xl text-black leading-relaxed mb-6">
                 We launched a global remote internship program focused on web development, 
-                receiving over <span className="font-bold text-blue-300">1,700 CVs</span> from 
+                receiving over <span className="font-bold text-blue-900">1,700 CVs</span> from 
                 aspiring developers and students worldwide.
               </p>
-              <p className="text-blue-200">
+              <p className="text-blue-950">
                 This program helped us contribute to the global tech community while identifying emerging talent.
               </p>
             </div>

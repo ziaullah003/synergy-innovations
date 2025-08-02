@@ -73,7 +73,7 @@ export default function Hero() {
       title: "Synergy Club", 
       desc: "Join a community of innovators and tech enthusiasts.",
       btn: "Visit the Club",
-      src: "synergy-club",
+      src: "/synergy-club",
     },
     {
       title: "Synergy Mall",
