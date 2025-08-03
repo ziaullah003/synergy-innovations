@@ -10,7 +10,7 @@ const SynergyClubHero = () => {
           {/* Text Content */}
           <div className="lg:w-1/2 space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-blue-300">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-100 to-blue-100">
                 Software Synergy Club
               </span>
             </h1>
