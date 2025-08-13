@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Users, Calendar, MapPin, Target, Award, TrendingUp, Globe, Heart, ChevronRight, Star, Building, Handshake, BookOpen } from 'lucide-react';
+import { Users, Calendar, MapPin, Target, Award, TrendingUp, Heart, ChevronRight, Star, Building, Handshake, BookOpen } from 'lucide-react';
+import { User } from 'lucide-react';
 
 const SynergyClubAbout = () => {
   const [activeTimeline, setActiveTimeline] = useState(0);
@@ -23,12 +24,7 @@ const SynergyClubAbout = () => {
       description: "Expanded to 150+ members and launched our first annual community summit. Established core programs for networking and skill development.",
       milestone: "150+ Active Members"
     },
-    {
-      year: "2021",
-      title: "Global Expansion",
-      description: "Opened our first international branches in 5 cities. Launched virtual events platform reaching members worldwide.",
-      milestone: "5 Global Branches"
-    },
+    
     {
       year: "2023",
       title: "Innovation Hub",
@@ -55,16 +51,11 @@ const SynergyClubAbout = () => {
     { icon: BookOpen, title: "Skill Development", description: "Workshops and learning programs for personal growth" },
     { icon: Handshake, title: "Networking Events", description: "Professional networking and collaboration opportunities" },
     { icon: Target, title: "Leadership Programs", description: "Developing future leaders and change-makers" },
-    { icon: Globe, title: "Global Outreach", description: "Connecting communities across different regions" },
+    { icon: User, title: "Career Counceling", description: "Shape your future in the guidence of technical experts" },
     { icon: Heart, title: "Social Impact", description: "Community service and social responsibility initiatives" }
   ];
 
-  const achievements = [
-    "Best Community Organization 2023",
-    "Excellence in Member Engagement",
-    "Outstanding Social Impact Award",
-    "Innovation in Community Building"
-  ];
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -111,7 +102,7 @@ const SynergyClubAbout = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-white">
+    <div className="bg-gradient-to-br from-gray-50 to-white mb-6">
       {/* Company Overview */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -164,19 +155,19 @@ const SynergyClubAbout = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-blue-950 text-white">
+      <section className="text-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Journey</h2>
-            <p className="text-xl text-blue-200">A timeline of growth, impact, and community building</p>
+            <p className="text-xl text-blue-950">A timeline of growth, impact, and community building</p>
           </div>
           
           <div className="relative">
-            <div className="flex overflow-x-auto pb-8 space-x-8">
+            <div className="flex overflow-x-auto pb-4 space-x-8">
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex-shrink-0 w-80 bg-blue-900/50 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-500 ${
+                  className={`flex-shrink-0 w-80 bg-blue-300/50 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-500 ${
                     activeTimeline === index 
                       ? 'border-blue-300 shadow-2xl scale-105' 
                       : 'border-blue-700/50 hover:border-blue-500'
@@ -184,25 +175,23 @@ const SynergyClubAbout = () => {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-3xl font-bold text-blue-300">{item.year}</span>
-                      <div className="px-3 py-1 bg-blue-400 text-blue-950 rounded-full text-sm font-bold">
-                        {item.milestone}
-                      </div>
+                      <span className="text-3xl font-bold text-black">{item.year}</span>
+                      
                     </div>
                     <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-blue-200 leading-relaxed">{item.description}</p>
+                    <p className="text-black leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
             
-            <div className="flex justify-center mt-8 space-x-2">
+            <div className="flex justify-center mt-4 space-x-2">
               {timelineData.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveTimeline(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeTimeline === index ? 'bg-blue-300 scale-125' : 'bg-blue-700 hover:bg-blue-500'
+                    activeTimeline === index ? 'bg-blue-700 scale-125' : 'bg-black hover:bg-blue-950'
                   }`}
                 />
               ))}
@@ -212,7 +201,7 @@ const SynergyClubAbout = () => {
       </section>
 
       {/* Statistics Section */}
-      <section id="stats-section" className="py-20 bg-gradient-to-r from-blue-50 to-white">
+      <section id="stats-section" className="py-10 bg-gradient-to-r from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-blue-950 mb-4">Our Impact in Numbers</h2>
@@ -279,78 +268,40 @@ const SynergyClubAbout = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-950">
+      <section className="text-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Why Choose Synergy Club?</h2>
-            <p className="text-xl text-blue-200">What makes our community special</p>
+            <h2 className="text-4xl font-bold text-black mb-4">Why Choose Synergy Club?</h2>
+            <p className="text-xl text-black">What makes our community special</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               "Inclusive and welcoming environment",
-              "Diverse community from 40+ countries",
               "Regular networking and learning events",
               "Professional development opportunities",
+              "Career counseling and mentorship",
               "Global presence with local impact",
               "Strong community support system"
+
             ].map((benefit, index) => (
               <div
                 key={index}
-                className="flex items-center space-x-4 bg-blue-800/30 backdrop-blur-sm rounded-xl p-6 border border-blue-300/20"
+                className="flex items-center space-x-4 bg-blue-200 backdrop-blur-sm rounded-xl p-6 border border-blue-300/20"
               >
                 <div className="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
-                  <ChevronRight className="w-4 h-4 text-white" />
+                  <ChevronRight className="w-4 h-4 text-black" />
                 </div>
-                <p className="text-blue-100 font-medium">{benefit}</p>
+                <p className="text-blqck font-medium">{benefit}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-blue-950 mb-4">Recognition & Achievements</h2>
-            <p className="text-xl text-gray-600">Awards and recognition for our community impact</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-                  <Star className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="font-bold text-blue-950 text-lg">{achievement}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Join Our Community?</h2>
-          <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-            Become part of a vibrant community that's dedicated to growth, connection, and positive impact. 
-            Let's build something amazing together.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors duration-300 transform hover:scale-105">
-              Join Our Community
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 transform hover:scale-105">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

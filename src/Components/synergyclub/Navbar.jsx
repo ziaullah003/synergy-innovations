@@ -11,8 +11,7 @@ const SynergyClubNavbar = () => {
     { name: 'Activities', href: '/synergy-club/activities' },
     { name: 'Events', href: '/synergy-club/events' },
     { name: 'Gallery', href: '/synergy-club/gallery' },
-    { name: 'Senior Alumni', href: '/synergy-club/senior-alumni' },
-    { name: 'Current Members', href: '/synergy-club/current-members' },
+    { name: 'Team', href: '/synergy-club/team' },
     { name: 'About', href: '/synergy-club/about' }
   ];
 
