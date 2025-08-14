@@ -170,9 +170,9 @@ export default function Hero() {
 
       {/* AI Chatbot - Modern Design */}
       {chatbotVisible && (
-        <div className="fixed bottom-20 right-2 sm:bottom-24 sm:right-6 w-72 sm:w-80 max-w-[calc(100vw-1rem)] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl text-gray-800 font-sans flex flex-col overflow-hidden z-50 border border-white/30">
+        <div className="fixed bottom-20 right-2 sm:bottom-24 sm:right-6 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl text-gray-800 font-sans flex flex-col overflow-hidden z-50 border border-white/30">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-3 flex justify-between items-center font-semibold text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-2 py-1 flex justify-between items-center font-semibold text-white">
             <div className="flex items-center gap-2">
               <MessageCircle className="w-5 h-5" />
               <span className="text-sm sm:text-base">AI Chatbot</span>
@@ -186,7 +186,7 @@ export default function Hero() {
           </div>
           
           {/* Messages */}
-          <div className="flex-1 p-4 overflow-y-auto bg-gradient-to-b from-gray-50 to-white max-h-64 min-h-48">
+          <div className="flex-1 p-2 overflow-y-auto bg-gradient-to-b from-gray-50 to-white max-h-25 min-h-20">
             {messages.map((m, i) => (
               <div
                 key={i}
@@ -194,7 +194,7 @@ export default function Hero() {
               >
                 <div className={`inline-block max-w-[85%] text-sm ${
                   m.sender === 'bot' 
-                    ? 'bg-white p-3 px-4 rounded-2xl text-gray-800 shadow-sm border border-gray-100' 
+                    ? 'bg-white p-1 px-2 rounded-2xl text-gray-800 shadow-sm border border-gray-100' 
                     : 'bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 px-4 rounded-2xl font-medium shadow-md'
                 }`}>
                   {m.text}

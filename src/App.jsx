@@ -10,6 +10,11 @@ import TeamRoute from './Components/synergysolutions/Routes/TeamRoute';
 import ContactRoute from './Components/synergysolutions/Routes/ContactRoute';
 import AboutRoute from './Components/synergysolutions/Routes/AboutRoute';
 import HomeSC from './Components/synergyclub/HomeSC';
+import AboutRouteS from './Components/synergyclub/Routes/AboutRouteS';
+import TeamRouteS from './Components/synergyclub/Routes/TeamRouteS';
+import EventsRouteS from './Components/synergyclub/Routes/EventsRouteS';
+import GalleryRouteS from './Components/synergyclub/Routes/GalleryRouteS';
+import ActivitiesRouteS from './Components/synergyclub/Routes/ActivitiesRouteS';
 
 function App() {
   return (
@@ -26,6 +31,13 @@ function App() {
         <Route path="/synergy-solutions/contact" element={<ContactRoute />} />
         <Route path="/synergy-solutions/about" element={<AboutRoute />} />
         <Route path="/synergy-club" element={<HomeSC />} />
+        <Route path="/synergy-club/about" element={<AboutRouteS />} />
+        <Route path="/synergy-club/team" element={<TeamRouteS />} />
+        <Route path="/synergy-club/events" element={<EventsRouteS />} />
+        <Route path="/synergy-club/gallery" element={<GalleryRouteS />} />
+        <Route path="/synergy-club/activities" element={<ActivitiesRouteS />} />
+        {/* Add more routes as needed */}
+        
         
       </Routes>
     </Router>

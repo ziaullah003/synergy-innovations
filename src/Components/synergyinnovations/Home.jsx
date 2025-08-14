@@ -5,6 +5,7 @@ import Products from './Products'
 import "./assets/Css/app.css"; // Import custom styles
 import Header from './Header';
 import Footer from './Footer';
+// import ContentHub from './NewsFeed';
 import { Router, Route,  } from 'react-router-dom';
 let Home = () => {
   return (
@@ -13,6 +14,7 @@ let Home = () => {
       <Hero />
       <About />
       <Products />
+      {/* Add more components as needed */}
       <Footer />
     </>
   );

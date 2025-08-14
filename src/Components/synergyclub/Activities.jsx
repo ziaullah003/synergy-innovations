@@ -542,7 +542,7 @@ const Activities = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-blue-900 mb-4">
-            Activities & Events
+            Courses & Activities
           </h1>
           <p className="text-lg text-blue-700 max-w-2xl mx-auto">
             Discover our comprehensive courses and upcoming events. Join us to enhance your skills and knowledge.

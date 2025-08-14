@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SynergyClubNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const navigate = useNavigate();
 
   const navItems = [
     { name: 'Home', href: '/synergy-club' },
-    { name: 'Branches', href: '/synergy-club/branches' },
     { name: 'Activities', href: '/synergy-club/activities' },
     { name: 'Events', href: '/synergy-club/events' },
     { name: 'Gallery', href: '/synergy-club/gallery' },
@@ -46,8 +47,8 @@ const SynergyClubNavbar = () => {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className="text-gray-700 hover:text-blue-600 px-2 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
+                  onClick={() => navigate(item.href)}
+                  className="text-gray-700 hover:text-blue-600 hover:cursor-pointer px-2 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
@@ -59,7 +60,7 @@ const SynergyClubNavbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <button 
-              onClick={() => handleNavClick('/')}
+              onClick={() => navigate('/')}
               className="bg-blue-900 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:cursor-pointer"
             >
               Back to Home
