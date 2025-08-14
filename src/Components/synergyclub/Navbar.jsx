@@ -87,7 +87,7 @@ const SynergyClubNavbar = () => {
           {navItems.map((item) => (
             <button
               key={item.name}
-              onClick={() => handleNavClick(item.href)}
+              onClick={() => navigate(item.href)}
               className="w-full text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
             >
               {item.name}
@@ -97,7 +97,7 @@ const SynergyClubNavbar = () => {
           {/* Mobile CTA Button */}
           <div className="px-3 py-2">
             <button 
-              onClick={() => handleNavClick('/')}
+              onClick={() => navigate('/')}
               className="w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
             >
               Back to Home
