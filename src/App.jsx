@@ -15,6 +15,7 @@ import TeamRouteS from './Components/synergyclub/Routes/TeamRouteS';
 import EventsRouteS from './Components/synergyclub/Routes/EventsRouteS';
 import GalleryRouteS from './Components/synergyclub/Routes/GalleryRouteS';
 import ActivitiesRouteS from './Components/synergyclub/Routes/ActivitiesRouteS';
+import ApplyRoute from './Components/synergyclub/Routes/ApplyRoute';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/synergy-club/events" element={<EventsRouteS />} />
         <Route path="/synergy-club/gallery" element={<GalleryRouteS />} />
         <Route path="/synergy-club/activities" element={<ActivitiesRouteS />} />
+        <Route path="/synergy-club/applyform/:id" element={<ApplyRoute />} />
         {/* Add more routes as needed */}
         
         

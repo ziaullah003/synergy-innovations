@@ -53,9 +53,9 @@ const AboutSS = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+    <div className="min-h-screen bg-primary">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white">
+      <section className="relative overflow-hidden bg-primary bg-primary via-blue-800 to-blue-900 text-white">
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative container mx-auto px-4 py-10 lg:py-16">
           <div className="text-center">
@@ -63,14 +63,14 @@ const AboutSS = () => {
               Software Synergy
               <span className="block text-blue-300 mt-2">Solutions</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+            <p className="text-xl md:text-2xl text-white-100 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
               Where Expertise Meets Innovation
             </p>
             <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-600">
-              <div className="bg-blue-300 text-blue-900 px-6 py-3 rounded-full font-semibold">
-                Custom Software Development
+              <div className="bg-blue-300 white px-6 py-3 rounded-full font-semibold">
+                 Software Development
               </div>
-              <div className="bg-transparent border-2 border-blue-300 text-blue-300 px-6 py-3 rounded-full font-semibold hover:bg-blue-300 hover:text-blue-900 transition-all duration-300">
+              <div className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-300 hover:text-cl-blue transition-all duration-300">
                 AI Solutions
               </div>
             </div>
@@ -78,7 +78,7 @@ const AboutSS = () => {
         </div>
         
         {/* Floating animation elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-300 rounded-full opacity-20 animate-bounce animation-delay-1000"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary rounded-full opacity-20 animate-bounce animation-delay-1000"></div>
         <div className="absolute bottom-20 right-10 w-16 h-16 bg-blue-300 rounded-full opacity-20 animate-bounce animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-blue-300 rounded-full opacity-20 animate-pulse"></div>
       </section>
@@ -94,15 +94,15 @@ const AboutSS = () => {
                   key={index}
                   className={`text-center p-6 rounded-xl transition-all duration-700 transform hover:scale-105 ${
                     currentStat === index 
-                      ? 'bg-gradient-to-br from-blue-900 to-blue-800 text-white shadow-2xl' 
+                      ? 'bg-primary text-white shadow-2xl' 
                       : 'bg-gradient-to-br from-blue-50 to-blue-100 text-blue-900 hover:shadow-lg'
                   }`}
                 >
-                  <Icon className={`w-8 h-8 mx-auto mb-4 ${currentStat === index ? 'text-blue-300' : 'text-blue-900'}`} />
-                  <div className={`text-3xl font-bold mb-2 ${currentStat === index ? 'text-blue-300' : 'text-blue-900'}`}>
+                  <Icon className={`w-8 h-8 mx-auto mb-4 ${currentStat === index ? 'text-white' : 'text-blue-950'}`} />
+                  <div className={`text-3xl font-bold mb-2 ${currentStat === index ? 'text-white' : 'text-blue-950'}`}>
                     {stat.number}
                   </div>
-                  <div className={`text-sm font-medium ${currentStat === index ? 'text-blue-100' : 'text-blue-700'}`}>
+                  <div className={`text-sm font-medium ${currentStat === index ? 'text-white' : 'text-blue-950'}`}>
                     {stat.label}
                   </div>
                 </div>
@@ -116,7 +116,7 @@ const AboutSS = () => {
       <section id="who-we-are" className="py-20 bg-gradient-to-r from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className={`text-4xl md:text-5xl font-bold text-blue-900 mb-8 transition-all duration-1000 transform ${
+            <h2 className={`text-4xl md:text-5xl font-bold cl-primary mb-8 transition-all duration-1000 transform ${
               isVisible['who-we-are'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
               Who We Are
@@ -126,17 +126,17 @@ const AboutSS = () => {
             }`}>
               <div className="text-left">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  We are a professional <span className="font-semibold text-blue-900">software development company</span> based on years of hands-on experience and a passion for technology.
+                  We are a professional <span className="font-semibold cl-primary">software development company</span> based on years of hands-on experience and a passion for technology.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Our team includes expert developers, project managers, and creative minds who work together to bring your digital ideas to life.
                 </p>
               </div>
               <div className="relative">
-                <div className="bg-gradient-to-br from-blue-900 to-blue-800 p-8 rounded-2xl text-white shadow-2xl transform hover:scale-105 transition-all duration-300">
-                  <Users className="w-16 h-16 text-blue-300 mb-4" />
+                <div className="bg-primary  p-8 rounded-2xl text-white shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <Users className="w-16 h-16 cl-primary mb-4" />
                   <h3 className="text-2xl font-bold mb-4">Expert Team</h3>
-                  <p className="text-blue-100">Dedicated professionals working together to deliver exceptional results</p>
+                  <p className="white">Dedicated professionals working together to deliver exceptional results</p>
                 </div>
               </div>
             </div>
@@ -145,40 +145,10 @@ const AboutSS = () => {
       </section>
 
       {/* Our Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className={`text-4xl md:text-5xl font-bold text-blue-900 text-center mb-16 transition-all duration-1000 transform ${
-            isVisible['services'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            What We Offer
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={index}
-                  className={`group p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-900 hover:to-blue-800 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl ${
-                    isVisible['services'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                  }`}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <Icon className="w-12 h-12 text-blue-900 group-hover:text-blue-300 mb-6 transition-colors duration-300" />
-                  <h3 className="text-xl font-bold text-blue-900 group-hover:text-white mb-4 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-700 group-hover:text-blue-100 transition-colors duration-300">
-                    {service.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Internship Program Section */}
-      <section id="internship" className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section id="internship" className="py-20 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className={`text-4xl md:text-5xl font-bold mb-8 transition-all duration-1000 transform ${
@@ -189,16 +159,16 @@ const AboutSS = () => {
             <div className={`bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 md:p-12 transition-all duration-1000 transform ${
               isVisible['internship'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              <Globe className="w-16 h-16 text-blue-300 mx-auto mb-6" />
+              <Globe className="w-16 h-16 cl-primary mx-auto mb-6" />
               <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">
                 Remote Internship Program 2024
               </h3>
               <p className="text-lg md:text-xl text-black leading-relaxed mb-6">
                 We launched a global remote internship program focused on web development, 
-                receiving over <span className="font-bold text-blue-900">1,700 CVs</span> from 
+                receiving over <span className="font-bold cl-primary">1,700 CVs</span> from 
                 aspiring developers and students worldwide.
               </p>
-              <p className="text-blue-950">
+              <p className="text-black">
                 This program helped us contribute to the global tech community while identifying emerging talent.
               </p>
             </div>
@@ -209,7 +179,7 @@ const AboutSS = () => {
       {/* Why Choose Us Section */}
       <section id="why-choose" className="py-20 bg-gradient-to-br from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h2 className={`text-4xl md:text-5xl font-bold text-blue-900 text-center mb-16 transition-all duration-1000 transform ${
+          <h2 className={`text-4xl md:text-5xl font-bold cl-primary text-center mb-16 transition-all duration-1000 transform ${
             isVisible['why-choose'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             Why Choose Us
@@ -224,7 +194,7 @@ const AboutSS = () => {
                   }`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <CheckCircle className="w-6 h-6 text-blue-300 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 cl-primary mt-1 flex-shrink-0" />
                   <p className="text-gray-700 font-medium">{reason}</p>
                 </div>
               ))}
@@ -243,7 +213,7 @@ const AboutSS = () => {
                 <div className={`transition-all duration-1000 transform ${
                   isVisible['founders'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}>
-                  <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+                  <h2 className="text-4xl md:text-5xl font-bold cl-primary mb-6">
                     Meet Our Founders
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed mb-8 text-justify">

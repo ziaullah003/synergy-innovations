@@ -74,7 +74,7 @@ const About = () => {
       description: 'Innovative technology solutions that transform businesses and drive digital excellence.',
       longDescription: 'Our Solutions division specializes in cutting-edge software development, AI integration, and digital transformation services. We partner with enterprises to create scalable, efficient solutions that solve complex challenges and accelerate growth.',
       features: ['Custom Software Development', 'AI & Machine Learning', 'Cloud Solutions', 'Digital Transformation'],
-       color: 'from-blue-300 to-blue-300'
+       color: 'bg-white'
     },
     {
       id: 'mall',
@@ -83,7 +83,7 @@ const About = () => {
       description: 'Next-generation e-commerce platform revolutionizing online shopping experiences.',
       longDescription: 'Synergy Mall represents the future of digital commerce, offering a seamless, intelligent shopping ecosystem. Our platform combines advanced analytics, personalized recommendations, and innovative payment solutions to create unparalleled customer experiences.',
       features: ['Smart Shopping Experience', 'Vendor Management', 'Analytics Dashboard', 'Mobile Commerce'],
-       color: 'from-blue-300 to-blue-300'
+  
     },
     {
       id: 'club',
@@ -104,12 +104,12 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-transparent"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-6">
               <Zap className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-bacl mb-6">
               Synergy Innovations
-              <span className="block text-3xl md:text-4xl text-blue-600 mt-2">Group</span>
+              <span className="block text-3xl md:text-4xl cl-primary mt-2">Group</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Pioneering the future through innovative solutions, revolutionary commerce, and collaborative communities. 
@@ -139,15 +139,15 @@ const About = () => {
               }`}
               onClick={() => setActiveSection(activeSection === section.id ? null : section.id)}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${section.color}`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br bg-white`}></div>
               <div className="relative p-8 h-full">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="text-blue-950">{section.icon}</div>
-                  <ChevronRight className={`w-6 h-6 text-black transition-transform duration-300 ${
+                  <div className="cl-primary">{section.icon}</div>
+                  <ChevronRight className={`w-6 h-6 cl-primary transition-transform duration-300 ${
                     activeSection === section.id ? 'rotate-90' : ''
                   }`} />
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-4">{section.title}</h3>
+                <h3 className="text-2xl font-bold cl-primary mb-4">{section.title}</h3>
                 <p className="text-black leading-relaxed">{section.description}</p>
                 
                 {activeSection === section.id && (
@@ -158,7 +158,7 @@ const About = () => {
                     <div className="grid grid-cols-2 gap-2">
                       {section.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center text-sm text-black">
-                          <div className="w-2 h-2 bg-blue-200 rounded-full mr-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
                           {feature}
                         </div>
                       ))}
@@ -172,23 +172,23 @@ const About = () => {
 
         {/* Vision & Mission */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-blue-100 to-blue-100 rounded-2xl p-8 border border-blue-200">
+          <div className="bg-primary rounded-2xl p-8 border border-blue-200">
             <div className="flex items-center mb-6">
-              <Target className="w-8 h-8 text-blue-600 mr-3" />
-              <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
+              <Target className="w-8 h-8 text-white mr-3" />
+              <h3 className="text-2xl font-bold text-white">Our Mission</h3>
             </div>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-white leading-relaxed">
               To create synergistic ecosystems that empower businesses and individuals through innovative technology, 
               seamless commerce experiences, and collaborative communities that drive meaningful change and sustainable growth.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-100 to-blue-100 rounded-2xl p-8 border border-gray-200">
+          <div className="bg-primary rounded-2xl p-8 border border-gray-200">
             <div className="flex items-center mb-6">
-              <Globe className="w-8 h-8 text-blue-600 mr-3" />
-              <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+              <Globe className="w-8 h-8 text-white mr-3" />
+              <h3 className="text-2xl font-bold text-white">Our Vision</h3>
             </div>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-white leading-relaxed">
               To be the global leader in integrated innovation, where technology solutions, commerce platforms, 
               and community networks converge to create unprecedented value and transform how the world connects, 
               collaborates, and conducts business.
@@ -199,25 +199,25 @@ const About = () => {
         {/* Stats Section */}
         <div 
           ref={statsRef}
-          className="bg-gradient-to-r from-blue-200 to-blue-400 text-black rounded-2xl p-8 text-center shadow-lg"
+          className="bg-primary text-white rounded-2xl p-8 text-center shadow-lg"
         >
           <h3 className="text-2xl font-bold mb-8">Driving Innovation Across Industries</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="transform hover:scale-105 transition-transform duration-300">
               <div className="text-3xl font-bold mb-2">
-                <AnimatedNumber target={500} suffix="+" duration={2000} />
+                <AnimatedNumber target={20} suffix="+" duration={2000} />
               </div>
               <div className="">Projects Delivered</div>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300">
               <div className="text-3xl font-bold mb-2">
-                <AnimatedNumber target={50} suffix="+" duration={2200} />
+                <AnimatedNumber target={10} suffix="+" duration={2200} />
               </div>
               <div className="">Countries Served</div>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300">
               <div className="text-3xl font-bold mb-2">
-                <AnimatedNumber target={10} suffix="K+" duration={2400} />
+                <AnimatedNumber target={500} suffix="+" duration={2400} />
               </div>
               <div>Community Members</div>
             </div>

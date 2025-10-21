@@ -72,7 +72,7 @@ const SynergyClubNavbar = () => {
           <div className="hidden lg:block">
             <button
               onClick={() => handleNavClick('/')}
-              className="bg-blue-900 text-white px-6 py-2 rounded-lg text-sm font-medium transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+              className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-medium transition-transform duration-200 hover:scale-105 hover:shadow-lg"
             >
               Back to Home
             </button>
@@ -116,7 +116,7 @@ const SynergyClubNavbar = () => {
           <div className="px-3 py-2">
             <button
               onClick={() => handleNavClick('/')}
-              className="w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+              className="w-full bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
             >
               Back to Home
             </button>

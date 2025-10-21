@@ -18,7 +18,7 @@ const FooterSS = () => {
   ];
 
   return (
-    <footer className="bg-blue-200 shadow-blue-950 relative z-10 pt-16">
+    <footer className="bg-primary shadow-blue-950 relative z-10 pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-between -mx-4">
           
@@ -30,18 +30,18 @@ const FooterSS = () => {
                 <div className="w-12 h-12 relative">
                  <img src="/logo.png" alt="Logo" className="w-full h-full object-cover rounded-full" />
                 </div>
-                <h1 className="text-2xl ml-4 font-bold text-gray-800">
-                  Synergy <span className="text-blue-900">Solutions</span>
+                <h1 className="text-2xl ml-4 font-bold text-white">
+                  Synergy <span className="text-ehite">Solutions</span>
                 </h1>
               </div>
 
-              <p className="mb-6 text-base text-gray-600 leading-relaxed">
+              <p className="mb-6 text-base text-white leading-relaxed">
                 Empowering businesses with smart digital solutions and creative technology. We strive to build tools that inspire growth, efficiency, and lasting impact.
               </p>
 
               {/* Phone Numbers */}
-              <div className="flex items-start text-sm font-medium text-gray-700">
-                <div className="mr-3 text-blue-600 mt-1">
+              <div className="flex items-start text-sm font-medium text-white">
+                <div className="mr-3 text-white mt-1">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -55,7 +55,7 @@ const FooterSS = () => {
           {/* Quick Links */}
           <div className="w-full px-4 sm:w-1/2 lg:w-2/12 mb-10">
             <div className="w-full">
-              <h4 className="mb-8 text-lg font-semibold text-gray-800">
+              <h4 className="mb-8 text-lg font-semibold text-white">
                 Quick Links
               </h4>
               <ul className="space-y-3">
@@ -63,10 +63,10 @@ const FooterSS = () => {
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="inline-block text-base text-gray-600 hover:text-blue-600 transition-colors duration-200 relative group"
+                      className="inline-block text-base text-white hover:text-cyan-600 transition-colors duration-200 relative group"
                     >
                       {item.name}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                   </li>
                 ))}
@@ -77,7 +77,7 @@ const FooterSS = () => {
           {/* Our Products */}
           <div className="w-full px-4 sm:w-1/2 lg:w-2/12 mb-10">
             <div className="w-full">
-              <h4 className="mb-8 text-lg font-semibold text-gray-800">
+              <h4 className="mb-8 text-lg font-semibold text-white">
                 Our Products
               </h4>
               <ul className="space-y-3">
@@ -85,10 +85,10 @@ const FooterSS = () => {
                   <li key={product}>
                     <a
                       href="#"
-                      className="inline-block text-base text-gray-600 hover:text-blue-600 transition-colors duration-200 relative group"
+                      className="inline-block text-base text-white hover:text-cyan-600 transition-colors duration-200 relative group"
                     >
                       {product}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                   </li>
                 ))}
@@ -99,7 +99,7 @@ const FooterSS = () => {
           {/* Social Media & Copyright */}
           <div className="w-full px-4 sm:w-full lg:w-3/12">
             <div>
-              <h4 className="mb-8 text-lg font-semibold text-gray-800">
+              <h4 className="mb-8 text-lg font-semibold text-white">
                 Follow Us On
               </h4>
               
@@ -107,32 +107,32 @@ const FooterSS = () => {
               <div className="mb-8 flex items-center space-x-3">
                 <a
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 transform hover:scale-110"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:border-white hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-110"
                 >
                   <Facebook className="w-4 h-4" />
                 </a>
                 <a
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 transform hover:scale-110"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:border-white hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-110"
                 >
                   <Twitter className="w-4 h-4" />
                 </a>
                 <a
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 transform hover:scale-110"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:border-white hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-110"
                 >
                   <Youtube className="w-4 h-4" />
                 </a>
                 <a
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 transform hover:scale-110"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white text-white hover:border-white hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-110"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
               </div>
 
               {/* Copyright */}
-              <p className="text-base text-gray-600 leading-relaxed">
+              <p className="text-base text-white leading-relaxed">
                 &copy; 2025 Synergy Innovations | Developed By Synergy Solutions
               </p>
             </div>

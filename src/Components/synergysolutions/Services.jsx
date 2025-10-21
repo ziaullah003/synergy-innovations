@@ -66,7 +66,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-blue-900 mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-cyan-600 mb-4">
             Our Services
           </h1>
           <p className="text-lg md:text-xl text-black font-semibold max-w-3xl mx-auto">
@@ -119,7 +119,7 @@ const Services = () => {
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAll(true)}
-              className="bg-blue-900 text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-bg-primary text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Show More
             </button>
@@ -131,7 +131,7 @@ const Services = () => {
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAll(false)}
-              className="bg-blue-700 text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-primary text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Show Less
             </button>
@@ -140,13 +140,13 @@ const Services = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-cyan-600 mb-4">
             Ready to Start Your Project?
           </h2>
-          <p className="text-blue-700 mb-8 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-black mb-8 max-w-2xl mx-auto text-sm md:text-base">
             Let's discuss how we can help bring your ideas to life with our comprehensive software solutions.
           </p>
-          <button className="bg-blue-900 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:bg-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <button className="bg-primary text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:bg-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
             Get Started Today
           </button>
         </div>

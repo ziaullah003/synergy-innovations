@@ -3,21 +3,22 @@ import React from "react";
 const SynergyClubFooter = () => {
   return (
     <>
-      <footer className="footer z-10 bg-blue-200 shadow-blue-950 dark:bg-dark pl-8 pt-8">
+      <footer className="footer z-10 bg-primary text-white pl-8 pt-8">
         <div className="container flex items-center justify-center">
           <div className="-mx-4 flex flex-wrap justify-between">
             <div className="px-4 sm:w-2/12 lg:w-4/12">
               <div className="mb-3">
                 <div className="flex items-center">
-                  <a href="/synergy-club" className="mb-6 inline-block max-w-[50px]">
-                    <img
-                      src="/logo.png"
-                      alt="logo"
-                      className="max-w-full dark:hidden"
-                    />
-                  </a>
+                <a href="/#" className="mb-6 inline-block bg-white rounded-full max-w-[50px]">
+                  <img
+                    src="/logo.png"
+                    alt="logo"
+                    className="max-w-full dark:hidden px-2 py-1 rounded-full"
+                  />
+                 
+                </a>
                   <h1 className="text-xl ml-5 font-bold text-dark dark:text-white">
-                    Synergy <span className="text-blue-950">Club</span>
+                    Synergy Club
                   </h1>
                 </div>
                 <p className="mb-4 text-base text-body-color dark:text-dark-6">

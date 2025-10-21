@@ -21,114 +21,11 @@ const mockGalleryAPI = {
       {
         id: 1,
         url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop&crop=center",
         title: "Tech Partnership Summit 2024",
         event: "Partnership with Techkhwa",
         location: "Tech Hub, Peshawar",
-        photographer: "John Smith",
-        category: "partnership"
-      },
-      {
-        id: 2,
-        url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=center",
-        title: "Collaborative Research Workshop",
-        event: "Collaboration with I'm Sciences",
-        location: "Institute of Management Sciences",
-        photographer: "Sarah Johnson",
-        category: "collaboration"
-      },
-      {
-        id: 3,
-        url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=300&fit=crop&crop=center",
-        title: "Matrix Pakistan Meeting",
-        event: "Matrix Pakistan Collaboration",
-        location: "Matrix Office, Islamabad",
-        category: "collaboration"
-      },
-      {
-        id: 4,
-        url: "https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&h=300&fit=crop&crop=center",
-        title: "GDG Cloud Workshop Session",
-        event: "GDG Cloud Event - NIC Islamabad",
-        location: "National Incubation Center",
-       
-        category: "workshop"
-      },
-      {
-        id: 5,
-        url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop&crop=center",
-        title: "GIKI Developer Meetup",
-        event: "GDG Event - GIKI",
-        location: "Ghulam Ishaq Khan Institute",
-        category: "meetup"
-      },
-      {
-        id: 6,
-        url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=300&fit=crop&crop=center",
-        title: "AI Excellence Award Ceremony",
-        event: "GDG AI Devfest - I'm Sciences",
-        location: "Institute of Management Sciences",
-        category: "awards"
-      },
-      {
-        id: 7,
-        url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&h=300&fit=crop&crop=center",
-        title: "Digital Marketing Certification",
-        event: "Media Workshop (2 Days)",
-        location: "Conference Hall, Peshawar",
-        category: "certifications"
-      },
-      {
-        id: 8,
-        url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center",
-        title: "Team Collaboration Achievement",
-        event: "Partnership with Techkhwa",
-        location: "Tech Hub, Peshawar",
 
-        category: "awards"
-      },
-      {
-        id: 9,
-        url: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&crop=center",
-        title: "Research Excellence Certificate",
-        event: "Collaboration with I'm Sciences",
-        location: "Institute of Management Sciences",
-        category: "certifications"
-      },
-      {
-        id: 10,
-        url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center",
-        title: "Innovation Award Recognition",
-        event: "GDG AI Devfest - I'm Sciences",
-        location: "Institute of Management Sciences",
-        category: "awards"
-      },
-      {
-        id: 11,
-        url: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop&crop=center",
-        title: "Business Networking Certificate",
-        event: "Matrix Pakistan Collaboration",
-        location: "Matrix Office, Islamabad",
-        category: "certifications"
-      },
-      {
-        id: 12,
-        url: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop&crop=center",
-        thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop&crop=center",
-        title: "Workshop Completion Award",
-        event: "Media Workshop (2 Days)",
-        location: "Conference Hall, Peshawar",
-        category: "awards"
+        category: "partnership"
       }
     ];
   }
@@ -259,7 +156,7 @@ const GalleryCard = ({ image, index, isVisible, onClick }) => {
           )}
           
           <img
-            src={image.thumbnail}
+            src={image.url}
             alt={image.title}
             className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-110 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -310,10 +207,6 @@ const GalleryCard = ({ image, index, isVisible, onClick }) => {
             <div className="flex items-center gap-1">
               <MapPin className="w-3 h-3" />
               <span className="truncate">{image.location}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Camera className="w-3 h-3" />
-              <span className="truncate max-w-16">{image.photographer}</span>
             </div>
           </div>
         </div>

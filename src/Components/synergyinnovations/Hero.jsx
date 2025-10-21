@@ -139,12 +139,12 @@ export default function Hero() {
                   
                   {card.src ? (
                     <Link to={card.src} target="_blank" rel="noopener noreferrer">
-                      <button className="w-full bg-gradient-to-r from-blue-400 to-blue-400 hover:from-blue-900 hover:to-blue-900 text-white font-semibold py-2 sm:py-2.5 lg:py-3 px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-xs sm:text-sm lg:text-base transform hover:-translate-y-1">
+                      <button className="w-full bg-primary hover:from-blue-900 hover:to-blue-900 text-white font-semibold py-2 sm:py-2.5 lg:py-3 px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-xs sm:text-sm lg:text-base transform hover:-translate-y-1">
                         {card.btn}
                       </button>
                     </Link>
                   ) : (
-                    <button className="w-full bg-gradient-to-r from-blue-400 to-blue-400 hover:from-blue-900 hover:to-blue-900 text-white font-semibold py-2 sm:py-2.5 lg:py-3 px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-xs sm:text-sm lg:text-base transform hover:-translate-y-1">
+                    <button className="w-full bg-primary hover:bg-primary hover:bg-primary text-white font-semibold py-2 sm:py-2.5 lg:py-3 px-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-xs sm:text-sm lg:text-base transform hover:-translate-y-1">
                         {card.btn}
                       </button>
                   )}
@@ -172,7 +172,7 @@ export default function Hero() {
       {chatbotVisible && (
         <div className="fixed bottom-20 right-2 sm:bottom-24 sm:right-6 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl text-gray-800 font-sans flex flex-col overflow-hidden z-50 border border-white/30">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-2 py-1 flex justify-between items-center font-semibold text-white">
+          <div className="bg-primary px-2 py-1 flex justify-between items-center font-semibold text-white">
             <div className="flex items-center gap-2">
               <MessageCircle className="w-5 h-5" />
               <span className="text-sm sm:text-base">AI Chatbot</span>

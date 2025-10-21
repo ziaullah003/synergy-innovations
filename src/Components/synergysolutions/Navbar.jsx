@@ -43,7 +43,7 @@ const Navbar = () => {
                   className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link to="/" onClick={handleScrollTop}>
-              <button className="bg-blue-900 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:cursor-pointer">
+              <button className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:cursor-pointer">
                 Back to Home
               </button>
             </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
           {/* Mobile CTA Button */}
           <div className="px-3 py-2">
             <Link to="/" onClick={handleScrollTop}>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+              <button className="w-full bg-primary hover:bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
                 Back to Home
               </button>
             </Link>
