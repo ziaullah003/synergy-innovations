@@ -54,10 +54,10 @@ const SynergyClubFooter = () => {
                       </defs>
                     </svg>
                   </span>
-                  <div>
+                  <span>
                     <span>+92 (325) 170 50 43</span> <br />
                     <span>+92 (327) 593 99 38</span>
-                  </div>
+                  </span>
                 </p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -13,15 +14,14 @@ export default function HeroSS() {
    we are dedicated to elevating your operations to new heights. Experience the power of synergy with us, and unlock the possibilities for your business like never before.
   </span>
   <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-0 sm:gap-x-4">
-    <a href="https://example.com/new-feature"
+    <Link to={"/synergy-solutions/contact"} 
       class="flex flex-row items-center justify-center gap-x-2 rounded-lg text-white px-10 py-3 bg-primary">
-
       Start Discussion
-    </a>
-    <a href="#demo"
+    </Link>
+    <Link to={"/synergy-solutions/projects"}
       class="flex flex-row items-center justify-center gap-x-2 rounded-lg border border-black-900 px-10 py-3 text-white">View
       Projects →
-    </a>
+    </Link>
   </div>
 </div>
   );
