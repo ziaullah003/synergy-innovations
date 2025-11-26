@@ -1,155 +1,86 @@
 'use client'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from '@headlessui/react'
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-
-
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+import React, { useState } from 'react'
+import { Menu, X } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleMenu = () => setIsOpen(!isOpen)
+  const location = useLocation()
+
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/synergy-innovations/about' },
+    { name: 'Announcements', href: '/synergy-innovations/notifications' },
+    { name: 'Contact Us', href: '/synergy-innovations/contact' }
+  ]
+
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setIsOpen(false)
+  }
 
   return (
-    <header className="bg-primary shadow-lg sticky top-0 z-50 text-white">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 lg:px-8">
-        {/* Logo and Brand */}
-        <div className="flex items-center space-x-3">
-          <Link to="/" className="flex items-center group bg-white px-2 py-1 rounded-full">
-  
-            <img
-              alt="Synergy Innovations Group Logo"
-              src="/logo.png"
-              className="h-10 w-auto sm:h-12 transition-transform duration-300 group-hover:scale-105"
-            />
-                  </Link>
-          <div className="block">
-            <Link to="/"><span className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight">
-              Synergy Innovations Group
+    <nav className="bg-primary shadow-md sticky top-0 z-50 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0 flex items-center">
+            <img src="/logo.png" alt="Logo" className="h-12 w-10 rounded-full p-1 bg-white " />
+            <span className="ml-3 text-2xl font-bold tracking-tight">
+              Synergy <span className="text-white">Innovations</span>
             </span>
-            </Link>
           </div>
-        </div>
 
-        {/* Mobile menu button */}
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="inline-flex items-center justify-center rounded-md p-2.5 hover:bg-blue-400/30 transition-colors duration-200"
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
-        </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:items-center md:space-x-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                onClick={handleScrollTop}
+                className={`relative text-white px-3 py-2 text-sm font-medium transition-colors duration-200 group ${
+                  location.pathname === item.href ? 'font-semibold' : ''
+                }`}
+              >
+                {item.name}
+                {/* underline animation */}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
+          </div>
 
-        {/* Desktop Navigation */}
-        <PopoverGroup className="hidden lg:flex lg:gap-x-8">
-          <Link 
-            to="/" 
-            className="text-base font-semibold  hover:text-gray-700 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-400/20"
-          > 
-            Home 
-          </Link> 
-          <Link 
-            to="/synergy-innovations/about" 
-            className="text-base font-semibold  hover:text-gray-700 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-400/20"
-          > 
-            About Us 
-          </Link>
-          <Link 
-            to="/synergy-innovations/notifications" 
-            className="text-base font-semibold hover:text-gray-700 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-400/20"
-          > 
-            Announcements 
-          </Link>
-                    <Link 
-            to="/synergy-innovations/contact" 
-            className="text-base font-semibold hover:text-gray-700 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-400/20"
-          > 
-            Contact Us 
-          </Link>
-        </PopoverGroup>
-      </nav>
-
-      {/* Mobile Menu */}
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-        <div className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-auto min-w-80 max-w-md overflow-y-auto bg-primary px-6 py-4 shadow-2xl">
-          {/* Mobile menu header */}
-          <div className="flex items-center justify-between border-b border-blue-500/30 pb-4">
-            <div className="flex items-center space-x-2">
-              <a href="#" className="flex items-center">
-                <img
-                  alt="Synergy Innovations Group Logo"
-                  src="/logo.png"
-                  className="h-8 w-auto"
-                />
-              </a>
-              <span className="text-sm font-bold text-gray-900 leading-tight">
-                Synergy Innovations Group
-              </span>
-            </div>
+          {/* Mobile menu button */}
+          <div className="md:hidden">
             <button
-              type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="rounded-md p-2 text-gray-700 hover:bg-blue-400/30 transition-colors duration-200 flex-shrink-0"
+              onClick={toggleMenu}
+              className="text-white p-2 rounded-md hover:bg-white/20 transition-colors duration-200"
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="h-5 w-5" />
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-          
-          {/* Mobile menu content */}
-          <div className="mt-6 flow-root">
-            <div className="space-y-2">
-              <Link
-                to="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-lg px-4 py-3 text-base font-semibold text-gray-900 hover:bg-blue-400/30 transition-colors duration-200"
-              >
-                Home
-              </Link>
-              <Link
-                to="/synergy-innovations/about"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-lg px-4 py-3 text-base font-semibold text-gray-900 hover:bg-blue-400/30 transition-colors duration-200"
-              >
-                About Us
-              </Link>
-              <Link
-                to="/synergy-innovations/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-lg px-4 py-3 text-base font-semibold text-gray-900 hover:bg-blue-400/30 transition-colors duration-200"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
-    </header>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`md:hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}
+      >
+        <div className="px-4 pt-4 pb-6 space-y-2 bg-primary border-t border-white/30">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.href}
+              onClick={handleScrollTop}
+              className="block text-white px-3 py-2 rounded-md text-base font-medium hover:bg-white/20 transition-colors duration-200"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </nav>
   )
 }

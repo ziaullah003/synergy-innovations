@@ -44,7 +44,6 @@ const Footer = () => {
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M15.1875 19.4688C14.3438..."></path>
                 </svg>
               </span>
               <div>
@@ -82,7 +81,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white hover:bg-white hover:text-primary transition-colors dark:border-dark-3"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white  hover:text-primary transition-colors dark:border-dark-3"
                 aria-label={social.name}
               >
                 {social.icon}
