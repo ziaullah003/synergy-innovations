@@ -135,7 +135,7 @@ export default function Hero() {
         href="https://wa.me/1234567890" // Replace with your number
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-24 bg-green-500 p-4 rounded-full shadow-xl z-50 hover:bg-green-600 transition"
+        className="fixed bottom-3 right-24 bg-green-500 p-4 rounded-full shadow-xl z-50 hover:bg-green-600 transition"
       >
         <FaWhatsapp size={24} color="white" />
       </a>
@@ -143,7 +143,7 @@ export default function Hero() {
       {/* Chatbot Toggle Button */}
       <button
         onClick={() => setChatbotVisible((prev) => !prev)}
-        className="fixed bottom-6 hover:cursor-pointer right-6 bg-primary p-4 rounded-full shadow-xl z-50 hover:bg-blue-700 transition flex items-center justify-center"
+        className="fixed bottom-3 hover:cursor-pointer right-6 bg-primary p-4 rounded-full shadow-xl z-50 hover:bg-blue-700 transition flex items-center justify-center"
       >
         <FiMessageCircle size={24} color="white" />
       </button>
