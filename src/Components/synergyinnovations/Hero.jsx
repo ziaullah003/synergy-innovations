@@ -151,8 +151,8 @@ export default function Hero() {
 
 {/* Chatbot Panel */}
 {chatbotVisible && (
-  <div className="fixed bottom-24 right-2 w-85 sm:w-50 md:w-70 bg-white rounded-2xl shadow-2xl overflow-hidden z-50 flex flex-col
-                  h-[300px] sm:h-[300px] md:h-[350px]">
+  <div className="fixed bottom-24 right-2 w-75 sm:w-50 md:w-70 bg-white rounded-2xl shadow-2xl overflow-hidden z-50 flex flex-col
+                  h-[350px] sm:h-[300px] md:h-[350px]">
     {/* Header */}
     <div className="bg-primary text-white p-3 flex justify-between items-center">
       <span className="flex items-center gap-2">
