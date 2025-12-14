@@ -107,7 +107,7 @@ const AboutHome = () => {
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-blue-950 mb-4">Our Areas of Focus</h2>
+            <h2 className="text-4xl font-bold cl-primary mb-4">Our Areas of Focus</h2>
             <p className="text-xl text-gray-600">How we create value for our community members</p>
           </div>
           
@@ -120,7 +120,7 @@ const AboutHome = () => {
                   className="group bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <div className="space-y-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-blue-950">{item.title}</h3>
@@ -135,11 +135,11 @@ const AboutHome = () => {
       
 
       {/* Timeline Section */}
-      <section className="text-black">
+      <section className="cl-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Journey</h2>
-            <p className="text-xl text-blue-950">A timeline of growth, impact, and community building</p>
+            <p className="text-xl text-primary">A timeline of growth, impact, and community building</p>
           </div>
           
           <div className="relative">
@@ -155,7 +155,7 @@ const AboutHome = () => {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-3xl font-bold text-black">{item.year}</span>
+                      <span className="text-3xl font-bold cl-primary">{item.year}</span>
                       
                     </div>
                     <h3 className="text-xl font-bold">{item.title}</h3>
@@ -184,8 +184,8 @@ const AboutHome = () => {
       <section id="stats-section" className="py-10 bg-gradient-to-r from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-blue-950 mb-4">Our Impact in Numbers</h2>
-            <p className="text-xl text-gray-600">Achievements that showcase our community's strength</p>
+            <h2 className="text-4xl font-bold cl-primary mb-4">Our Impact in Numbers</h2>
+            <p className="text-xl text-black">Achievements that showcase our community's strength</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -200,7 +200,7 @@ const AboutHome = () => {
                   className="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-gray-100"
                 >
                   <div className="text-center space-y-4">
-                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${stat.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Mail, Phone, MapPin, Code, Zap, CheckCircle } from 'lucide-react';
-
+import { backend_url } from '../url';
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,16 +23,11 @@ const ContactUs = () => {
     'AI/ML Development',
     'DevOps & Infrastructure',
     'Custom Software',
-    'Consulting'
+    'business Development'
+
   ];
 
-  const budgetRanges = [
-    '$5K - $10K',
-    '$10K - $25K',
-    '$25K - $50K',
-    '$50K - $100K',
-    '$100K+'
-  ];
+
 
   const validateForm = () => {
     const newErrors = {};
@@ -49,24 +44,49 @@ const ContactUs = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
-      setIsSubmitted(true);
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          service: '',
-          budget: '',
-          message: ''
-        });
-      }, 3000);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // Validate required fields
+  if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    alert("Please fill in all required fields: Name, Email, and Message.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${backend_url}api/contactSS/create`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.message || "Failed to submit the form. Please try again.");
+      return;
     }
-  };
+
+    // Success alert
+    alert("Thank you! Your message has been sent successfully. We'll get back to you soon.");
+
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      service: '',
+      budget: '',
+      message: ''
+    });
+
+  } catch (err) {
+    console.error("SUBMIT ERROR:", err);
+    alert("Failed to submit the form. Please try again later.");
+  }
+};
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -94,13 +114,13 @@ const ContactUs = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <Code className="w-10 h-10 text-blue-900" />
-            <Zap className="w-8 h-8 text-blue-900 animate-pulse" />
+            <Code className="w-10 h-10 cl-primary" />
+            <Zap className="w-8 h-8 cl-primary animate-pulse" />
           </div>
-          <h1 className="text-2xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 bg-clip-text text-transparent mb-4 leading-tight">
+          <h1 className="text-2xl md:text-5xl font-bold cl-primary mb-4 leading-tight">
             Let's Build Something
           </h1>
-          <h2 className="text-2xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 to-blue-900 bg-clip-text text-transparent mb-8 leading-tight">
+          <h2 className="text-2xl md:text-5xl font-bold cl-primary mb-8 leading-tight">
             Amazing Together
           </h2>
           <p className="text-xl font-semibold text-black max-w-2xl mx-auto leading-relaxed">
@@ -113,36 +133,36 @@ const ContactUs = () => {
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:border-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              <h3 className="text-2xl font-bold text-blue-900 mb-6">Get In Touch</h3>
+              <h3 className="text-2xl font-bold cl-primary mb-6">Get In Touch</h3>
               
               <div className="space-y-4">
                 <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-gradient-to-r from-blue-900 to-blue-900 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-black font-semibold text-sm">Email</p>
-                    <p className="text-blue-900 font-semibold">hello@softwarehouse.com</p>
+                    <p className="cl-primary font-semibold">hello@softwarehouse.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-gradient-to-r from-blue-900 to-blue-900 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-black font-semibold text-sm">Phone</p>
-                    <p className="text-blue-900 font-semibold">+1 (555) 123-4567</p>
+                    <p className="cl-primary font-semibold">+92 (327) 5939938</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-gradient-to-r from-blue-900 to-blue-900 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-black font-semibold text-sm">Office</p>
-                    <p className="text-blue-900 font-semibold">Tech Hub, Innovation District</p>
+                    <p className="cl-primary font-semibold">Peshawar Kpk Pakistan</p>
                   </div>
                 </div>
               </div>
@@ -153,19 +173,19 @@ const ContactUs = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-black mb-1">500+</div>
-                  <div className="text-blue-900 text-sm font-medium">Projects Delivered</div>
+                  <div className="cl-primary text-sm font-medium">Projects Delivered</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-black mb-1">98%</div>
-                  <div className="text-blue-900 text-sm font-medium">Client Satisfaction</div>
+                  <div className="cl-primary text-sm font-medium">Client Satisfaction</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-black mb-1">24/7</div>
-                  <div className="text-blue-900 text-sm font-medium">Support</div>
+                  <div className="cl-primary text-sm font-medium">Support</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-black mb-1">5+</div>
-                  <div className="text-blue-900 text-sm font-medium">Years Experience</div>
+                  <div className="cl-primary text-sm font-medium">Years Experience</div>
                 </div>
               </div>
             </div>
@@ -250,19 +270,14 @@ const ContactUs = () => {
                 
                 <div className="space-y-2">
                   <label className="text-gray-700 font-medium text-sm">Budget Range</label>
-                  <select
+                   <input
+                    type="tel"
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                  >
-                    <option value="">Select budget range</option>
-                    {budgetRanges.map(range => (
-                      <option key={range} value={range}>
-                        {range}
-                      </option>
-                    ))}
-                  </select>
+                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                    placeholder="Your Budget (e.g. 1000 USD)"
+                  />
                 </div>
               </div>
 
@@ -281,7 +296,7 @@ const ContactUs = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-blue-900 to-blue-900 text-white font-semibold py-4 px-6 rounded-lg hover:from-blue-700 hover:to-cyan-700 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 flex items-center justify-center gap-2 group"
+                className="w-full bg-primary  text-white font-semibold py-4 px-6 rounded-lg hover:from-blue-700 hover:to-cyan-700 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 flex items-center justify-center gap-2 group"
               >
                 <span>Send Message</span>
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

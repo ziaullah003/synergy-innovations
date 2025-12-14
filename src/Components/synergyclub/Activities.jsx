@@ -209,12 +209,12 @@ const Activities = () => {
 
                     {/* Apply Button */}
                     <button
-                      onClick={() => !deadlinePassed && navigate(`/synergy-club/applyform/${event._id}`, { state: { paid: event.paid } })}
+                      onClick={() => !deadlinePassed && navigate(`/synergy-club/applyform/${event._id}`, { state: { paid: event.paid , title:event.title} })}
                       disabled={deadlinePassed}
-                      className={`mt-3 py-2 px-4 w-max rounded-lg flex items-center gap-2 justify-center text-sm font-medium ${
+                      className={`mt-3 py-2 px-4 w-max rounded-lg  flex items-center gap-2 justify-center text-sm font-medium ${
                         deadlinePassed
                           ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-                          : "bg-primary text-white hover:opacity-90"
+                          : "bg-primary text-white hover:opacity-90 hover:cursor-pointer"
                       }`}
                     >
                       <ExternalLink size={16} /> {deadlinePassed ? "Deadline Passed" : "Apply Now"}

@@ -37,8 +37,8 @@ const SynergyClubNavbar = () => {
             className="flex-shrink-0 flex items-center cursor-pointer"
           >
             <img src="/logo.png" alt="Synergy Club Logo" className="h-8 w-7" />
-            <span className="ml-3 text-2xl font-bold text-gray-800">
-              Synergy <span className="text-blue-950">Club</span>
+            <span className="ml-3 text-2xl font-bold cl-primary">
+              Synergy Club
             </span>
           </div>
 

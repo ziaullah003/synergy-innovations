@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { backend_url } from "../url";
 
 const ApplyForm = () => {
   const location = useLocation();
@@ -7,6 +9,8 @@ const ApplyForm = () => {
 
   // ✅ Check if event is paid (from route state)
   const paid = location.state?.paid || false;
+  const activityName = location.state?.title || "the activity";
+  const courseId = location.pathname.split("/").pop();
 
   // ✅ Form fields state
   const [formData, setFormData] = useState({
@@ -33,22 +37,46 @@ const ApplyForm = () => {
   };
 
   // ✅ Handle submit
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
+ // Install axios if not installed: npm i axios
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const formDataToSend = new FormData();
+
+    // Append all form values
+    Object.keys(formData).forEach((key) => {
+      formDataToSend.append(key, formData[key]);
+    });
+
+    // Append courseId
+    formDataToSend.append("courseId", courseId);
+
+    await axios.post(
+      `${backend_url}api/application/apply`,
+      formDataToSend,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+
     setSubmitted(true);
 
-    // Redirect or show confirmation
     setTimeout(() => {
-      navigate("/synergy-club");
+      navigate("/synergy-club/activities");
     }, 2000);
-  };
+  } catch (err) {
+    console.error(err);
+    alert("Submission failed");
+  }
+};
 
   return (
     <div className="min-h-screen bg-white flex justify-center items-center px-4 py-10">
       <div className="w-full max-w-3xl bg-white border rounded-2xl shadow-lg p-8">
         <h2 className="text-2xl md:text-3xl font-bold cl-primary text-center mb-6">
-          Apply for Activity
+          Apply for {activityName}
         </h2>
 
         {submitted ? (

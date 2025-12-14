@@ -97,14 +97,14 @@ useEffect(() => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 mb-4">
-            <Users className="w-8 h-8 text-blue-900" />
-            <span className="bg-gradient-to-r font-bold from-blue-900 to-blue-900 bg-clip-text text-transparent text-sm tracking-wider uppercase">
+            <Users className="w-8 h-8 cl-primary" />
+            <span className="cl-primary font-bold  text-sm tracking-wider uppercase">
               Our Team
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-3">
             Meet the
-            <span className="bg-gradient-to-r from-blue-900 to-blue-900 bg-clip-text text-transparent">
+            <span className="cl-primary text-transparent">
               {" "}Innovators
             </span>
           </h1>

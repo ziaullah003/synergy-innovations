@@ -11,23 +11,21 @@ const SynergyFeed = () => {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const [actRes, evRes, annRes] = await Promise.all([
+        const [actRes, annRes] = await Promise.all([
           axios.get(`${backend_url}api/activities`),
-          axios.get(`${backend_url}api/events`),
           axios.get(`${backend_url}api/announcements`),
         ]);
 
         const activities = Array.isArray(actRes.data?.activities)
           ? actRes.data.activities
           : [];
-        const events = Array.isArray(evRes.data?.events) ? evRes.data.events : [];
         const announcements = Array.isArray(annRes.data?.announcements)
           ? annRes.data.announcements
           : [];
 
         const combined = [
           ...activities.map((item) => ({ ...item, type: "activity" })),
-          ...events.map((item) => ({ ...item, type: "event" })),
+
           ...announcements.map((item) => ({ ...item, type: "announcement" })),
         ];
 
@@ -74,7 +72,6 @@ const FeedCard = ({ item, navigate }) => {
 
   const handleClick = () => {
     if (type === "activity") navigate(`/synergy-club/activities`);
-    if (type === "event") navigate(`/synergy-club/events`);
     if (type === "announcement") {
     // Open the link from the DB
     if (item.link) {

@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './Components/ScrollTop';
 import Home from './Components/synergyinnovations/Home';
 import AboutUsRoute from './Components/synergyinnovations/Routes/AboutUsRoute';
 import ContactUsRoute from './Components/synergyinnovations/Routes/ContactUsRoute';
@@ -17,11 +18,12 @@ import GalleryRouteS from './Components/synergyclub/Routes/GalleryRouteS';
 import ActivitiesRouteS from './Components/synergyclub/Routes/ActivitiesRouteS';
 import ApplyRoute from './Components/synergyclub/Routes/ApplyRoute';
 import AnnouncemntRoute from './Components/synergyinnovations/Routes/AnnouncementRoute';
+import AmbassadorRoute from './Components/synergyclub/Routes/AmbassadorRoute';
 
 function App() {
   return (
     <Router>
-        
+        <scrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="synergy-innovations/about" element={<AboutUsRoute  />} />
@@ -40,6 +42,8 @@ function App() {
         <Route path="/synergy-club/activities" element={<ActivitiesRouteS />} />
         <Route path="/synergy-club/applyform/:id" element={<ApplyRoute />} />
         <Route path="/synergy-innovations/notifications" element={<AnnouncemntRoute />} />
+        <Route path="/synergy-club/apply-ambassador" element={<AmbassadorRoute />} />
+
         {/* Add more routes as needed */}
         
         

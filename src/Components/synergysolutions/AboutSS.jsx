@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Code, Users, Lightbulb, Clock, Target, CheckCircle, Globe, Smartphone, Monitor } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutSS = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -232,8 +233,8 @@ const AboutSS = () => {
                       <span className="ml-3 h-px w-8 bg-gray-400"></span>
                     </div>
                     <div className="flex items-center">
-                      <h4 className="text-xl font-semibold text-blue-900">Salman Elahi & Zia Ullah</h4>
-                      <span className="ml-3 h-px w-8 bg-blue-300"></span>
+                      <h4 className="text-xl font-semibold cl-primary">Salman Elahi & Zia Ullah</h4>
+                      <span className="ml-3 h-px w-8 bg-primary"></span>
                     </div>
                   </div>
                 </div>
@@ -293,7 +294,7 @@ const AboutSS = () => {
                     </div>
 
                     {/* Background accent */}
-                    <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-300 rounded-full opacity-20 animate-pulse"></div>
+                    <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary rounded-full opacity-20 animate-pulse"></div>
                   </div>
                 </div>
               </div>
@@ -303,7 +304,7 @@ const AboutSS = () => {
       </section>
 
       {/* Vision Section */}
-      <section id="vision" className="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white">
+      <section id="vision" className="py-20 bg-primar text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className={`text-4xl md:text-5xl font-bold mb-8 transition-all duration-1000 transform ${
@@ -314,15 +315,15 @@ const AboutSS = () => {
             <div className={`transition-all duration-1000 transform ${
               isVisible['vision'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              <Target className="w-16 h-16 text-blue-300 mx-auto mb-8" />
-              <p className="text-xl md:text-2xl text-blue-100 leading-relaxed mb-8">
+              <Target className="w-16 h-16 text-white mx-auto mb-8" />
+              <p className="text-xl md:text-2xl text-white leading-relaxed mb-8">
                 Our vision is to become a trusted name among top software development companies, 
                 known for quality, innovation, and client satisfaction.
               </p>
-              <p className="text-lg text-blue-200 mb-12">
+              <p className="text-lg text-white mb-12">
                 We don't just build software — we build partnerships that last.
               </p>
-              <div className="bg-blue-300 text-blue-900 px-8 py-4 rounded-full inline-block font-bold text-lg hover:bg-white transition-colors duration-300 cursor-pointer">
+              <div className="bg-white cl-primary px-8 py-4 rounded-full inline-block font-bold text-lg hover:bg-white transition-colors duration-300 cursor-pointer">
                 At Software Synergy Solutions, your success is our success
               </div>
             </div>
@@ -341,12 +342,10 @@ const AboutSS = () => {
             we're ready to support your digital journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-blue-900 to-blue-800 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-800 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+            <Link to={"/synergy-solutions/contact"} className="bg-primary text-white px-8 py-4 rounded-full font-semibold  transform hover:scale-105 transition-all duration-300 shadow-lg">
               Start Your Project
-            </button>
-            <button className="bg-transparent border-2 border-blue-300 text-blue-900 px-8 py-4 rounded-full font-semibold hover:bg-blue-300 hover:text-blue-900 transition-all duration-300">
-              Free Consultation
-            </button>
+            </Link>
+      
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ const Founder = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full  lg:w-5/12">
               <div className="hero-content">
-                <h1 className="mb-3 text-4xl font-bold  text-dark dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
+                <h1 className="mb-3 text34xl font-bold  text-dark dark:text-white sm:text-[35px] lg:text-[35px] xl:text-4xl">
                   Meet Our Founder's
                 </h1>
                 <p className="mb-8 max-w-[480px] text-justify text-body-color dark:text-dark-6">
@@ -38,14 +38,21 @@ const Founder = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden px-10 lg:block lg:w-1/12"></div>
-            <div className="w-full px-4 lg:w-5/12">
+            <div className="hidden px-15 lg:block lg:w-1/12"></div>
+            <div className="w-full px-10 lg:w-5/12">
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
                   <img
                     src="/founder5.jpeg"
                     alt="hero"
-                    className="h-130 w-xl rounded-2xl"
+                    className="
+                  w-[260px] 
+                  sm:w-[320px] 
+                  md:w-[360px] 
+                  lg:w-[400px]
+                  rounded-2xl 
+                  shadow-xl
+                "
                   />
                   <span className="absolute -bottom-8 -left-8 z-[-1]">
                     <svg

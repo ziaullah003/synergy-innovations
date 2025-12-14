@@ -54,7 +54,7 @@ const Projects = () => {
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
             Projects We've
-            <span className="text-cyan-600"> Delivered</span>
+            <span className="cl-primary"> Delivered</span>
           </h1>
 
           <p className="text-lg md:text-xl font-semibold text-black max-w-3xl mx-auto">

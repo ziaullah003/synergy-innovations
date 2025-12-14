@@ -60,7 +60,7 @@ const SynergyClubAbout = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveTimeline((prev) => (prev + 1) % timelineData.length);
-    }, 4000);
+    }, 2000);
     return () => clearInterval(timer);
   }, []);
 
@@ -114,8 +114,8 @@ const SynergyClubAbout = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center p-2">
             <div className="space-y-3">
               <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-blue-950">Who We Are</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <h3 className="text-3xl font-bold cl-primary">Who We Are</h3>
+                <p className="text-lg  leading-relaxed">
                   Software Synergy Club was founded in 2023 by two emerging software engineering students, Salman Ilahi and Ziaullah. It is a vision-driven technical community created to support and guide emerging students in their personal and professional growth.Our mission is to build the confidence and competence of students by enhancing their technical knowledge, communication skills, and presentation abilities, while also providing career counseling to help them make informed decisions about their future.Through interactive workshops, awareness sessions, and collaborative activities, we strive to create an environment where students can learn, share, and prepare themselves to excel in the competitive world ahead.
                 </p>
                
@@ -147,27 +147,27 @@ const SynergyClubAbout = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Journey</h2>
-            <p className="text-xl text-blue-950">A timeline of growth, impact, and community building</p>
+            <p className="text-xl cl-primary">A timeline of growth, impact, and community building</p>
           </div>
           
           <div className="relative mb-10">
-            <div className="flex overflow-x-auto pb-8 space-x-4  text-justify">
+            <div className="flex overflow-x-auto pb-8 space-x-4 text-white  text-justify">
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex-shrink-0 w-80 bg-blue-300/50 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-500 ${
+                  className={`flex-shrink-0 w-80 bg-primary text-white rounded-2xl p-6 border transition-all duration-500 ${
                     activeTimeline === index 
-                      ? 'border-blue-300 shadow-2xl scale-95' 
-                      : 'border-blue-700/50 hover:border-blue-500'
+                      ? 'border-blue-300 scale-95' 
+                      : ' border-transparent '
                   }`}
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-3xl font-bold text-black">{item.year}</span>
+                      <span className="text-3xl font-bold text-white">{item.year}</span>
                       
                     </div>
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-black leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl ">{item.title}</h3>
+                    <p className="text-white text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -179,7 +179,7 @@ const SynergyClubAbout = () => {
                   key={index}
                   onClick={() => setActiveTimeline(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeTimeline === index ? 'bg-blue-700 scale-125' : 'bg-black hover:bg-blue-950'
+                    activeTimeline === index ? 'bg-primary' : 'bg-blue-300'
                   }`}
                 />
               ))}
@@ -194,7 +194,7 @@ const SynergyClubAbout = () => {
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-blue-950 mb-2">Our Areas of Focus</h2>
+            <h2 className="text-4xl font-bold cl-primary mb-2">Our Areas of Focus</h2>
             <p className="text-xl text-gray-600">How we create value for our community members</p>
           </div>
           
@@ -207,10 +207,10 @@ const SynergyClubAbout = () => {
                   className="group bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <div className="space-y-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-blue-950">{item.title}</h3>
+                    <h3 className="text-xl font-bold cl-primary">{item.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ const SynergyClubAbout = () => {
       <section id="stats-section" className="py-5 bg-gradient-to-r from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-blue-950 mb-4">Our Impact in Numbers</h2>
+            <h2 className="text-4xl font-bold cl-primary mb-4">Our Impact in Numbers</h2>
             <p className="text-xl text-gray-600">Achievements that showcase our community's strength</p>
           </div>
           
@@ -239,7 +239,7 @@ const SynergyClubAbout = () => {
                   className="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-gray-100"
                 >
                   <div className="text-center space-y-4">
-                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${stat.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <div>

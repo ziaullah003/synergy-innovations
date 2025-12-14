@@ -2,11 +2,11 @@ import React from "react";
 import {
   Phone,
   Facebook,
-  Twitter,
-  Youtube,
+  Instagram,
   Linkedin,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaTiktok } from "react-icons/fa";
 
 const FooterSS = () => {
   const navItems = [
@@ -24,12 +24,13 @@ const FooterSS = () => {
     "Synergy Mall",
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: "" },
-    { icon: Twitter, href: "" },
-    { icon: Youtube, href: "" },
-    { icon: Linkedin, href: "" },
-  ];
+const socialLinks = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/software-synergy-club/", icon: <Linkedin size={18} /> },
+  { name: "Instagram", href: "https://www.instagram.com/software_synergy_solutions", icon: <Instagram size={18} /> },
+  { name: "Facebook", href: "https://www.facebook.com/share/1AbJ1ZBzFa/", icon: <Facebook size={18} /> },
+  { name: "Tiktok", href: "https://www.tiktok.com/@synergyclub_?_r=1&_t=ZS-92DGSLmWlzc", icon: <FaTiktok size={18} /> },
+
+];
 
   return (
     <footer className="bg-primary pt-10 pb-8">
@@ -97,7 +98,7 @@ const FooterSS = () => {
                         ? "/synergy-solutions"
                         : product === "Software Synergy Club"
                         ? "/synergy-club "
-                        : "/synergy-mall"
+                        : "https://synergymall.io"
                     }
                     className="inline-block text-sm sm:text-base text-white hover:text-cyan-300 transition-colors duration-200 group"
                   >
@@ -115,21 +116,22 @@ const FooterSS = () => {
               Follow Us On
             </h4>
 
-            <div className="flex justify-center sm:justify-start items-center space-x-3 mb-6">
-              {socialLinks.map(({ icon: Icon, href }, i) => (
+            <div className="flex items-center flex-wrap gap-3">
+              {socialLinks.map((social, index) => (
                 <a
-                  key={i}
-                  href={href}
+                  key={index}
+                  href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white text-white hover:cl-primary transition-all transform hover:scale-105"
+                  className="flex h-8 w-8 items-center text-white justify-center rounded-full border border-white  hover:cl-primary transition"
+                  aria-label={social.name}
                 >
-                  <Icon className="w-4 h-4" />
+                  {social.icon}
                 </a>
               ))}
             </div>
 
-            <p className="text-xs sm:text-sm text-white">
+            <p className="text-xs mt-4 sm:text-sm text-white">
               &copy; 2025 Synergy Innovations
               <br />
               Developed By Synergy Solutions

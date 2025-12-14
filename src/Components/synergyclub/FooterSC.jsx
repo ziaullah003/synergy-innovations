@@ -1,13 +1,14 @@
 import React from "react";
-import { Facebook, Twitter, Youtube, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Youtube, Linkedin, Instagram } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 const socialLinks = [
-  { name: "Facebook", href: "https://facebook.com", icon: <Facebook size={18} /> },
-  { name: "Twitter", href: "https://twitter.com", icon: <Twitter size={18} /> },
-  { name: "YouTube", href: "https://youtube.com", icon: <Youtube size={18} /> },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: <Linkedin size={18} /> },
-];
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/software-synergy-club/", icon: <Linkedin size={18} /> },
+  { name: "Instagram", href: "https://www.instagram.com/software_synergy_solutions", icon: <Instagram size={18} /> },
+  { name: "Facebook", href: "https://www.facebook.com/share/1AbJ1ZBzFa/", icon: <Facebook size={18} /> },
+  { name: "Tiktok", href: "https://www.tiktok.com/@synergyclub_?_r=1&_t=ZS-92DGSLmWlzc", icon: <FaTiktok size={18} /> },
 
+];
 const SynergyClubFooter = () => {
   return (
     <footer className="footer z-10 bg-primary text-white pl-8 pt-8">

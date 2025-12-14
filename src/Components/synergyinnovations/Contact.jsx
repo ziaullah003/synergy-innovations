@@ -1,259 +1,247 @@
-import React, { useState } from 'react';
-import { Send, Mail, Phone, MapPin, Code, Zap, CheckCircle, Clock, Users, Award, Globe, MessageSquare, Target } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Send,
+  Mail,
+  Phone,
+  MapPin,
+  Code,
+  Zap,
+  CheckCircle,
+  Clock,
+  Globe,
+  MessageSquare
+} from "lucide-react";
+import axios from "axios";
+import { backend_url } from "../url";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    subject: "",
+    message: ""
   });
-  
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
 
+  /* -------------------- Validation -------------------- */
   const validateForm = () => {
     const newErrors = {};
-    
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
+
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Invalid email address";
     }
-    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    
+
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
+  /* -------------------- Submit -------------------- */
+  const handleSubmit = async () => {
+    if (!validateForm()) return;
+
+    try {
+      await axios.post(`${backend_url}api/contact/submit`, formData);
+
       setIsSubmitted(true);
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          subject: '',
-          message: ''
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          subject: "",
+          message: ""
         });
       }, 3000);
+    } catch (error) {
+      console.error("Contact submit error:", error);
     }
   };
 
+  /* -------------------- Change Handler -------------------- */
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+
+    // Phone: allow digits only (prevents scientific notation)
+    if (name === "phone") {
+      const digitsOnly = value.replace(/\D/g, "");
+      setFormData((prev) => ({ ...prev, phone: digitsOnly }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
+  /* -------------------- Success Screen -------------------- */
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-cyan-50 flex items-center justify-center p-4">
-        <div className="bg-white backdrop-blur-lg rounded-2xl p-8 text-center animate-pulse border border-purple-200 shadow-2xl max-w-md">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-purple-50 to-cyan-50">
+        <div className="bg-white rounded-2xl p-8 text-center shadow-2xl">
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4 animate-bounce" />
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Message Sent Successfully!</h2>
-          <p className="text-gray-600 mb-2">Thank you for reaching out to Synergy Innovations.</p>
-          <p className="text-sm text-gray-500">We'll get back to you as soon as possible.</p>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            Message Sent Successfully!
+          </h2>
+          <p className="text-gray-600">
+            Thank you for contacting Synergy Innovations.
+          </p>
         </div>
       </div>
     );
   }
 
+  /* -------------------- Main UI -------------------- */
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-cyan-50 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="flex justify-center gap-3 mb-6">
             <div className="p-2 bg-primary rounded-xl">
               <Code className="w-8 h-8 text-white" />
             </div>
-            <Zap className="w-10 h-10 bg-primary animate-pulse" />
+            <Zap className="w-10 h-10 text-primary animate-pulse" />
             <div className="p-2 bg-primary rounded-xl">
               <Globe className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold bg-primary bg-clip-text text-transparent mb-4 leading-tight">
+
+          <h1 className="text-4xl md:text-6xl font-bold bg-primary bg-clip-text text-transparent mb-4">
             Contact Synergy Innovations
           </h1>
-          <h2 className="text-2xl md:text-4xl font-bold bg-primary bg-clip-text text-transparent mb-6 leading-tight">
-            Let's Start a Conversation
-          </h2>
-          <p className="text-lg text-black max-w-3xl mx-auto leading-relaxed">
-            Have a question, want to discuss a partnership, or just want to say hello? 
-            We'd love to hear from you. Drop us a message and we'll get back to you promptly.
+          <p className="text-lg text-black max-w-3xl mx-auto">
+            Have a question or want to work with us? Send us a message and we’ll
+            respond shortly.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Contact Info & Company Info */}
+          {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Contact Information */}
-            <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border border-purple-200 hover:border-purple-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                <MessageSquare className="w-6 h-6 cl-primary" />
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-purple-200">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <MessageSquare className="w-6 h-6 text-primary" />
                 Get In Touch
               </h3>
-              
+
               <div className="space-y-4">
-                <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-black text-sm">Email</p>
-                    <p className="text-black font-semibold">hello@synergyinnovations.com</p>
-                  </div>
+                <div className="flex gap-4">
+                  <Mail className="w-5 h-5 text-primary" />
+                  <p className="font-semibold">hello@synergyinnovations.com</p>
                 </div>
-                
-                <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-black text-sm">Phone</p>
-                    <p className="text-black font-semibold">034000000000</p>
-                  </div>
+
+                <div className="flex gap-4">
+                  <Phone className="w-5 h-5 text-primary" />
+                  <p className="font-semibold">0340 000 0000</p>
                 </div>
-                
-                <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <MapPin className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-black text-sm">Office</p>
-                    <p className="text-black font-semibold">Innovation Plaza, Silicon Valley</p>
-                    <p className="text-black text-sm">CA 94085, United States</p>
-                  </div>
+
+                <div className="flex gap-4">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <p className="font-semibold">
+                    Innovation Plaza, Silicon Valley
+                  </p>
                 </div>
               </div>
             </div>
-
-            {/* Business Hours */}
-            <div className="bg-primary rounded-2xl p-6 border border-purple-300/50 ">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Clock className="w-5 h-5 text-white font-bold" />
-                Business Hours
-              </h3>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-white font-medium">Monday - Friday</span>
-                  <span className="text-white font-medium">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-white font-medium">Saturday</span>
-                  <span className="text-white font-medium">10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-white font-medium">Sunday</span>
-                  <span className="text-white font-medium">Closed</span>
-                </div>
-                <div className="mt-3 pt-2 border-t border-purple-200">
-                  <span className="cl-primary font-medium text-xs">Emergency Support: 24/7</span>
-                </div>
-              </div>
-            </div>
-
-
           </div>
 
-          {/* Contact Form */}
+          {/* Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white/90 backdrop-blur-lg rounded-2xl p-8 border border-white/50 hover:border-purple-300 transition-all duration-500 shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Send Us a Message</h3>
-              <p className="text-gray-600 mb-6">Fill out the form below and we'll get back to you within 24 hours.</p>
-              
-              <div className="grid md:grid-cols-2 gap-6 mb-3">
-                <div className="space-y-2">
-                  <label className="text-gray-700 font-medium text-sm">Full Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                    placeholder="Enter your full name"
-                  />
-                  {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-gray-700 font-medium text-sm">Email Address *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                    placeholder="your.email@company.com"
-                  />
-                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-                </div>
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Full Name *"
+                  className="input"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email *"
+                  className="input"
+                />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-3">
-                <div className="space-y-2">
-                  <label className="text-gray-700 font-medium text-sm">Company/Organization</label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500  transition-all duration-300"
-                    placeholder="Your company name (optional)"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-gray-700 font-medium text-sm">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500  transition-all duration-300"
-                
-                  />
-                </div>
-              </div>
-              <div className="mb-3 space-y-2">
-                <label className="text-gray-700 font-medium text-sm">Message *</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
                   onChange={handleChange}
-                  rows={3}
-                  className="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 resize-none"
-                  placeholder="Tell us more about your inquiry, question, or how we can help you..."
+                  placeholder="Company (optional)"
+                  className="input"
                 />
-                {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone (whatsapp)"
+                  maxLength={15}
+                  className="input"
+                />
               </div>
+
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Subject *"
+                className="input mb-4"
+              />
+
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                placeholder="Your message *"
+                className="input mb-6"
+              />
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-primary text-white font-semibold py-4 px-6 rounded-lg hover:bg-primary  transition-all duration-300 transform cursor-pointer flex items-center justify-center gap-2 group"
+                className="w-full bg-primary text-white py-4 rounded-lg flex justify-center gap-2 items-center"
               >
-                <span>Send Message</span>
-                <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                Send Message <Send className="w-5 h-5" />
               </button>
-
-              <p className="text-xs text-gray-500 mt-4 text-center">
-                By sending this message, you agree to our privacy policy and terms of service.
-              </p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Tailwind helper */}
+      <style>{`
+        .input {
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid #d1d5db;
+          background: #f9fafb;
+        }
+      `}</style>
     </div>
   );
 };
