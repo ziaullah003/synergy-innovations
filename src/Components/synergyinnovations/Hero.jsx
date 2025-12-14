@@ -113,7 +113,7 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 flex items-center">
         <div className="container mx-auto text-center text-white px-4">
-          <h1 className="text-4xl font-bold mb-4">Welcome to Synergy Innovations Group</h1>
+          <h1 className="text-4xl font-bold mb-4 mt-4">Welcome to Synergy Innovations Group</h1>
           <p className="max-w-xl mx-auto mb-12">Software development, digital innovation & business transformation.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
